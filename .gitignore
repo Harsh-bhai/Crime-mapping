@@ -1,0 +1,26 @@
+# Ignore node_modules directories
+**/node_modules
+
+# Ignore .env files
+**/.env
+
+# Ignore next.js build directory
+frontend/.next
+
+# Ignore strapi build directory
+backend/.tmp
+
+# Ignore production build artifacts
+frontend/out
+backend/build
+
+# Ignore development server artifacts
+frontend/.idea
+backend/.cache
+backend/.vscode
+backend/.yarn
+
+# Ignore temporary files and caches
+**/.DS_Store
+**/.eslintcache
+**/*.log
