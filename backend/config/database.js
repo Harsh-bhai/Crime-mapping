@@ -4,9 +4,9 @@ module.exports = ({ env }) => ({
     connection: {
       host: env('DATABASE_HOST', 'localhost'),    
       port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'V-Mart'),
+      database: env('DATABASE_NAME', 'Crime-Mapping'),
       user: env('DATABASE_USERNAME', 'postgres'),
-      password: env('DATABASE_PASSWORD', 'harsh@822'),
+      password: env('DATABASE_PASSWORD', 'ashu'),
       schema: env('DATABASE_SCHEMA', 'public'), // Not required
       //  ssl: {
       //    rejectUnauthorized: false,
