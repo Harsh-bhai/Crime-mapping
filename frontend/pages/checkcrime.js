@@ -1,10 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import mapboxgl from "mapbox-gl";
 import Head from "next/head";
 
 const Checkcrime = ({ firs }) => {
   const months = [
+    'Normal',
     "January",
     "February",
     "March",
@@ -18,6 +19,11 @@ const Checkcrime = ({ firs }) => {
     "November",
     "December",
   ];
+  const [selectedMonth, setSelectedMonth] = useState('Normal');
+
+  const handleMonthChange = (event) => {
+    setSelectedMonth(event.target.value);
+  };
   useEffect(() => {
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
     const map = new mapboxgl.Map({
@@ -61,6 +67,26 @@ new mapboxgl.Marker({
         />
       </Head>
 
+      <div className="flex flex-col z-10 absolute justify-start bg-gray-100 p-4 rounded-lg m-4 ">
+      <h2 className="text-lg font-medium mb-4 text-center">Sort by <br/>Month/date</h2>
+      <div className="space-y-2">
+        {months.map((month) => (
+          <label key={month} className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="month"
+              value={month}
+              checked={selectedMonth === month}
+              defaultChecked={selectedMonth === 'Normal'}
+
+              onChange={handleMonthChange}
+              className="form-radio h-4 w-4 text-blue-500"
+            />
+            <span className="text-gray-700">{month}</span>
+          </label>
+        ))}
+      </div>
+    </div>
       <div
         id="map"
         className="min-h-screen"
