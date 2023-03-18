@@ -4,31 +4,32 @@
   "info": {
     "singularName": "fir",
     "pluralName": "firs",
-    "displayName": "Fir"
+    "displayName": "fir",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Firno": {
+    "firno": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "ComplaintDetails": {
+    "complaintDetails": {
       "type": "json"
     },
-    "Date": {
+    "date": {
       "type": "date",
-      "required": true
+      "required": false
     },
-    "Time": {
-      "type": "time"
-    },
-    "Location": {
+    "location": {
       "type": "json",
       "required": true
+    },
+    "time": {
+      "type": "string"
     }
   }
 }

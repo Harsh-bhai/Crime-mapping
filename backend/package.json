@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -9,6 +9,7 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-i18n": "4.8.2",
     "@strapi/plugin-users-permissions": "4.8.2",
@@ -20,7 +21,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "4ec11e7e-f26f-4fa3-8871-3268e3af3888"
+    "uuid": "5bab0675-a411-4eba-b6da-cdcee7c50bac"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",

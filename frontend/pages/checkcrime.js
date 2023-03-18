@@ -4,6 +4,20 @@ import mapboxgl from "mapbox-gl";
 import Head from "next/head";
 
 const Checkcrime = ({ firs }) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   useEffect(() => {
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
     const map = new mapboxgl.Map({
@@ -13,40 +27,29 @@ const Checkcrime = ({ firs }) => {
       zoom: 16,
     });
 
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+   
 
-    console.log(firs, "firs");
-    const popup = new mapboxgl.Popup()
-      .setLngLat([-96, 37.8])
-      // .setText("bro")
-      .setHTML(
-        `<h1 class="text-red-500">${firs.data[0].attributes.complaintDetails.type}</h1>\n<p>I am second line</p>\n<p class="text-blue-600 cursor-pointer">More info...</p>`
-      )
+firs.data.map((item)=>{
+  console.log(item)
+  const popup = new mapboxgl.Popup()
+  .setLngLat([-96, 37.8])
+  // .setText("bro")
+  .setHTML(
+    `<h1 class="text-red-500">${item.attributes.complaintDetails.type}</h1>\n<p>I am second line</p>\n<p class="text-blue-600 cursor-pointer">More info...</p>`
+  )
 
-      .addTo(map);
+  .addTo(map);
 
-    // Set marker options.
-    new mapboxgl.Marker({
-      color: "#1e1e1e",
-      scale: 0.5,
-      // draggable: true,
-    })
-      .setLngLat(firs.data[0].attributes.location.loglat)
-      .setPopup(popup)
-      .addTo(map);
+// Set marker options.
+new mapboxgl.Marker({
+  color: "#1e1e1e",
+  scale: 0.5,
+  // draggable: true,
+})
+  .setLngLat(item.attributes.location.loglat)
+  .setPopup(popup)
+  .addTo(map);
+})
   }, []);
 
   return (
