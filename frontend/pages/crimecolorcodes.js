@@ -3,7 +3,7 @@ import React from "react";
 const Crimecolorcodes = () => {
   return (
     <div>
-        <table style="width: 100%">
+        <table className="">
             <tr>
                 <th>Color</th>
                 <th>Color Code</th>
