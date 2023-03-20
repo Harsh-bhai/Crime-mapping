@@ -20,15 +20,14 @@
     "complaintDetails": {
       "type": "json"
     },
-    "date": {
-      "type": "date",
-      "required": false
-    },
     "location": {
       "type": "json",
       "required": true
     },
     "time": {
+      "type": "string"
+    },
+    "date": {
       "type": "string"
     }
   }

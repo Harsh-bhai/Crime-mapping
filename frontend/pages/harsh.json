@@ -1,0 +1,23 @@
+{
+    "firno":"3",
+    "date":"1/2/2023",
+    "time":"10:34 PM",
+    "complaintDetails":{
+        "type":"murder",
+        "victim":{
+            "name":"superman",
+            "age":"23",
+            "gender":"M"
+        },
+        "criminal":{
+            "name":"batman",
+            "age":"50",
+            "gender":"M"
+        }
+    },
+    "location":{
+        "loglat":[81.290576,21.192878],
+        "address":"hostpital",
+        "pincode":492001 
+    }
+}
