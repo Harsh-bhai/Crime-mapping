@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Addfir = () => {
   const [form, setForm] = useState({
@@ -20,6 +20,7 @@ const Addfir = () => {
     pincode: "",
     address: "",
     type: "",
+    color: "",
   });
 
   const handlechange = (e) => {
@@ -49,6 +50,7 @@ const Addfir = () => {
         location: {
           loglat: [form.long, form.lat],
           address: form.address,
+          color:form.color,
           pincode: form.pincode,
         },
       },
@@ -61,7 +63,7 @@ const Addfir = () => {
       },
       body: JSON.stringify(data),
     });
-    toast.success('FIR added Successfully', {
+    toast.success("FIR added Successfully", {
       position: "top-right",
       autoClose: 1200,
       hideProgressBar: false,
@@ -69,7 +71,7 @@ const Addfir = () => {
       pauseOnHover: true,
       draggable: true,
       theme: "light",
-      });
+    });
     setForm({
       firno: "",
       date: "",
@@ -85,23 +87,24 @@ const Addfir = () => {
       pincode: "",
       address: "",
       type: "",
-    })
+      color: "",
+    });
   };
   return (
     <form onSubmit={handlesubmit} className="min-h-screen mb-10">
       <section className="text-gray-600 body-font relative">
-      <ToastContainer
-position="top-right"
-autoClose={1200}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
+        <ToastContainer
+          position="top-right"
+          autoClose={1200}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="container px-5 pt-10 pb-5 mx-auto">
           <div className="flex flex-col text-center w-full ">
             <h1 className="sm:text-3xl text-5xl font-semibold title-font mb-4 text-gray-900">
@@ -120,7 +123,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='1'
+                    placeholder="1"
                     value={form.firno}
                     type="text"
                     id="firno"
@@ -165,7 +168,7 @@ theme="light"
       </section>
       <section className="text-gray-600 body-font relative ">
         <div className="container px-5 py-4 mx-auto">
-        <div className="flex flex-col text-center w-full ">
+          <div className="flex flex-col text-center w-full ">
             <h1 className="sm:text-2xl text-2xl font-medium title-font mb-4 text-gray-900">
               Complaint Details
             </h1>
@@ -183,7 +186,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='john'
+                    placeholder="john"
                     value={form.criminalname}
                     type="text"
                     id="criminalname"
@@ -202,7 +205,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='25'
+                    placeholder="25"
                     value={form.criminalage}
                     type="text"
                     id="criminalage"
@@ -221,7 +224,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='M'
+                    placeholder="M"
                     value={form.criminalgender}
                     type="text"
                     id="criminalgender"
@@ -243,7 +246,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='Priya'
+                    placeholder="Priya"
                     value={form.victimname}
                     type="text"
                     id="victimname"
@@ -262,7 +265,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='22'
+                    placeholder="22"
                     value={form.victimage}
                     type="text"
                     id="victimage"
@@ -281,7 +284,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='F'
+                    placeholder="F"
                     value={form.victimgender}
                     type="text"
                     id="victimgender"
@@ -310,7 +313,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='81.298854'
+                    placeholder="81.298854"
                     value={form.long}
                     type="text"
                     id="long"
@@ -326,7 +329,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='21.189892'
+                    placeholder="21.189892"
                     value={form.lat}
                     type="text"
                     id="lat"
@@ -336,7 +339,7 @@ theme="light"
                 </div>
               </div>
 
-              <div className="p-2 w-1/2 ">
+              <div className="p-2 w-1/4 ">
                 <div className="relative">
                   <label
                     for="pincode"
@@ -346,7 +349,7 @@ theme="light"
                   </label>
                   <input
                     onChange={handlechange}
-                    placeholder='492001'
+                    placeholder="492001"
                     value={form.pincode}
                     type="text"
                     id="pincode"
@@ -355,6 +358,26 @@ theme="light"
                   />
                 </div>
               </div>
+              <div className="p-2 w-1/4 ">
+                <div className="relative">
+                  <label
+                    for="color"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Crime Color Code
+                  </label>
+                  <input
+                    onChange={handlechange}
+                    placeholder="#232a36"
+                    value={form.color}
+                    type="text"
+                    id="color"
+                    name="color"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-500 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
@@ -378,10 +401,15 @@ theme="light"
           </div>
         </div>
         <p></p>
-
       </section>
       <div class="p-2 w-full space-y-6">
-       <a target={"_blank"} className="mx-[36rem] my-10 text-orange-500 hover:text-orange-800" href="http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000">You can find Longitude and Latitude using this link</a>
+        <a
+          target={"_blank"}
+          className="mx-[36rem] my-10 text-orange-500 hover:text-orange-800"
+          href="http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000"
+        >
+          You can find Longitude and Latitude using this link
+        </a>
         <button
           className="flex mx-auto text-white bg-orange-400 border-0 py-2 px-8 focus:outline-none hover:bg-orange-500 rounded-full text-lg"
           type="submit"
