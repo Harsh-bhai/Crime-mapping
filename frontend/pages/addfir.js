@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
+import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Addfir = () => {
   const [form, setForm] = useState({
@@ -57,11 +61,48 @@ const Addfir = () => {
       },
       body: JSON.stringify(data),
     });
+    toast.success('FIR added Successfully', {
+      position: "top-right",
+      autoClose: 1200,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+      });
+    setForm({
+      firno: "",
+      date: "",
+      time: "",
+      criminalname: "",
+      criminalage: "",
+      criminalgender: "",
+      victimname: "",
+      victimage: "",
+      victimgender: "",
+      long: "",
+      lat: "",
+      pincode: "",
+      address: "",
+      type: "",
+    })
   };
   return (
-    <form onSubmit={handlesubmit} className="min-h-screen">
+    <form onSubmit={handlesubmit} className="min-h-screen mb-10">
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-10 mx-auto">
+      <ToastContainer
+position="top-right"
+autoClose={1200}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
+        <div className="container px-5 pt-10 pb-5 mx-auto">
           <div className="flex flex-col text-center w-full ">
             <h1 className="sm:text-3xl text-5xl font-semibold title-font mb-4 text-gray-900">
               Add F.I.R
@@ -79,6 +120,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='1'
                     value={form.firno}
                     type="text"
                     id="firno"
@@ -141,6 +183,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='john'
                     value={form.criminalname}
                     type="text"
                     id="criminalname"
@@ -159,6 +202,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='25'
                     value={form.criminalage}
                     type="text"
                     id="criminalage"
@@ -177,6 +221,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='M'
                     value={form.criminalgender}
                     type="text"
                     id="criminalgender"
@@ -198,6 +243,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='Priya'
                     value={form.victimname}
                     type="text"
                     id="victimname"
@@ -216,6 +262,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='22'
                     value={form.victimage}
                     type="text"
                     id="victimage"
@@ -234,6 +281,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='F'
                     value={form.victimgender}
                     type="text"
                     id="victimgender"
@@ -262,6 +310,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='81.298854'
                     value={form.long}
                     type="text"
                     id="long"
@@ -277,6 +326,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='21.189892'
                     value={form.lat}
                     type="text"
                     id="lat"
@@ -296,6 +346,7 @@ const Addfir = () => {
                   </label>
                   <input
                     onChange={handlechange}
+                    placeholder='492001'
                     value={form.pincode}
                     type="text"
                     id="pincode"
@@ -314,6 +365,7 @@ const Addfir = () => {
                   </label>
                   <textarea
                     type="text"
+                    placeholder="Smriti nagar"
                     onChange={handlechange}
                     value={form.address}
                     id="address"
@@ -325,13 +377,16 @@ const Addfir = () => {
             </div>
           </div>
         </div>
+        <p></p>
+
       </section>
-      <div class="p-2 w-full">
+      <div class="p-2 w-full space-y-6">
+       <a target={"_blank"} className="mx-[36rem] my-10 text-orange-500 hover:text-orange-800" href="http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000">You can find Longitude and Latitude using this link</a>
         <button
           className="flex mx-auto text-white bg-orange-400 border-0 py-2 px-8 focus:outline-none hover:bg-orange-500 rounded-full text-lg"
           type="submit"
         >
-          Button
+          Submit
         </button>
       </div>
     </form>

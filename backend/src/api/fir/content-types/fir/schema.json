@@ -15,7 +15,8 @@
     "firno": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "minLength": 1
     },
     "complaintDetails": {
       "type": "json"
