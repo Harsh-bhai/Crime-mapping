@@ -39,99 +39,35 @@ const Crimecolorcodes = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="w-10 h-10 bg-black rounded-full"></div>
+                      <div className="w-10 h-10 bg-[#03adbf] rounded-full"></div>
                       <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Black</div>
+                        <div className="text-sm font-medium text-gray-900">Oyan</div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">#003201</div>
+                <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900">#03adbf</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">Robbery</div>
+                    <div className="text-sm text-gray-900">Chain Snatching</div>
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="w-10 h-10 bg-black rounded-full"></div>
+                      <div className="w-10 h-10 bg-[#d22f2d] rounded-full"></div>
                       <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Black</div>
+                        <div className="text-sm font-medium text-gray-900">Red</div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">#003201</div>
+                <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900">#d22f2d</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">Robbery</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-black rounded-full"></div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Black</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">#003201</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">Robbery</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-black rounded-full"></div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Black</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">#003201</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">Robbery</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-black rounded-full"></div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Black</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">#003201</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">Robbery</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-black rounded-full"></div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Black</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">#003201</div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">Robbery</div>
+                    <div className="text-sm text-gray-900">Murder</div>
                   </td>
                 </tr>
               </tbody>
