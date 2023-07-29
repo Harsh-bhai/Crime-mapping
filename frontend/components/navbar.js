@@ -27,14 +27,14 @@ const Navbar = () => {
           <img src="/logo.png" alt="" className='h-10 object-center object-cover '/>
           {/* <span className="ml-3 ">Crime Mapping</span> */}
         </div></Link>
-        <div ref={ref} className="navitems flex flex-col md:flex-row md:items-center md:bg-inherit bg-orange-400 px-10 py-4 md:py-0 absolute top-0 left-0 transform transition-transform -translate-x-full h-full md:h-auto md:w-full w-2/3 md:static md:translate-x-0  md:transition-none ease-in-out" >
+        <div ref={ref}  className="navitems md:z-0 z-40 flex flex-col md:flex-row md:items-center md:bg-inherit bg-orange-400 px-10 py-4 md:py-0 absolute top-0 left-0 transform transition-transform -translate-x-full h-full md:h-auto md:w-full w-2/3 md:static md:translate-x-0  md:transition-none ease-in-out" >
           <span className='absolute top-8 left-8
           'onClick={toggle} ><AiFillCloseCircle className='text-4xl font-extralight md:hidden' /></span>
           <div className="flex flex-col md:flex-row md:items-center md:space-x-8  mainitems my-24 md:my-4 space-y-6 md:space-y-0">
             <Link  href={"/addfir"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Add FIR</div></Link>
             {/* <Link  href={"/services"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Services</div></Link> */}
             <Link  href={"/map/0"}><div onClick={toggle} className= 'hover:text-red-600 text-black cursor-pointer'>Check Crimes</div></Link>
-            <Link  href={"/track"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Track Vehicles</div></Link>
+            {/* <Link  href={"/track"}><div onClick={toggle} className=' hover:text-red-600 text-black cursor-pointer'>Track Vehicles</div></Link> */}
             <Link  href={"/crimecolorcodes"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Crime Color Codes</div></Link>
           </div>
           </div>

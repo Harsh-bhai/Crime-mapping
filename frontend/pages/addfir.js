@@ -405,7 +405,7 @@ const Addfir = () => {
       <div class="p-2 w-full space-y-6">
         <a
           target={"_blank"}
-          className="mx-[36rem] my-10 text-orange-500 hover:text-orange-800"
+          className="flex justify-center my-10 text-orange-500 hover:text-orange-800"
           href="http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000"
         >
           You can find Longitude and Latitude using this link

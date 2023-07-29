@@ -24,3 +24,4 @@ backend/.yarn
 **/.DS_Store
 **/.eslintcache
 **/*.log
+/ardino lib

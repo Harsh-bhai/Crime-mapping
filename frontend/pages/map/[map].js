@@ -2,12 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import { AiFillCloseCircle ,AiFillDownCircle} from 'react-icons/ai';
 
 const Map = ({ firs }) => {
   const [firsData, setFirsData] = useState(firs);
-  const [selectedValue, setSelectedValue] = useState("mapbox://styles/mapbox/streets-v12")
+  const [selectedValue, setSelectedValue] = useState("mapbox://styles/mapbox/light-v11")
   const [options, setOptions] = useState(true)
 
 
@@ -30,11 +30,7 @@ const Map = ({ firs }) => {
 
   const router = useRouter();
   const [reloadkey, setReloadkey] = useState(1);
-  const reloader =()=>{
-    setReloadkey(Math.random());
-    console.log("reloader")
-    router.reload()
-  }
+
  
   const handleRadioChange = (event) => {
     // console.log("handlechange is running");
@@ -48,7 +44,7 @@ const Map = ({ firs }) => {
   //   setFirs(firs)
   // }, [reloadkey])
   const toggle=()=>{
-    console.log(options)
+    // console.log(options)
     if (options==true){
       setOptions(false)
     }
@@ -66,8 +62,9 @@ const Map = ({ firs }) => {
       container: "map",
       style: selectedValue,
       center: [81.298854, 21.189892],
-      zoom: 16,
+      zoom: 10,
     });
+    // {console.log(firs,"here")}
 
     firs?.data.map((item) => {
       // console.log(item, "acha");
@@ -75,10 +72,13 @@ const Map = ({ firs }) => {
         .setLngLat([-96, 37.8])
         // .setText("bro")
         .setHTML(
-          `<h1 class="text-red-500">${
-            item?.attributes.complaintDetails.type
-          }</h1>\n<p>I am second line</p>\n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${`http://localhost:3000/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
+          `<h1 class="text-red-500 font-semibold">${
+            item?.attributes.complaintDetails.type.toUpperCase()
+          }</h1>\n
+          
+          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${`http://localhost:3000/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
         )
+        // <p>I am second line</p>
 
         .addTo(map);
 
@@ -96,7 +96,7 @@ const Map = ({ firs }) => {
         .addTo(map);
     });
   }, [firsData, reloadkey]);
-  console.log(selectedValue,"selectedvalue")
+  // console.log(selectedValue,"selectedvalue")
 
   return (
     <div>
@@ -117,7 +117,7 @@ const Map = ({ firs }) => {
             value="0"
             onChange={handleRadioChange}
           />
-          Normal
+          All
         </label>
         {[...Array(12)].map((_, index) => {
           const month = index + 1;
@@ -138,10 +138,10 @@ const Map = ({ firs }) => {
         })}
       </div>}
       <button onClick={toggle}
-          className="flex mx-auto text-white bg-orange-400 border-0 py-1 px-6 focus:outline-none hover:bg-orange-500 rounded-full text-lg md:hidden"
+          className="flex mx-auto  text-orange-400 text-3xl  focus:outline-none hover:bg-orange-500 rounded-full  md:hidden"
           type="submit"
         >
-          Options
+          {options?<AiFillCloseCircle/>:<AiFillDownCircle/>}
         </button>
 
         <div className="md:absolute md:top-32 md:left-10 z-20 my-4 flex justify-center md:justify-start md:m-4 ">
@@ -169,13 +169,15 @@ export async function getServerSideProps(context) {
       return "";
     } else if (parseInt(month) < 10) {
       return `-0${month}-`;
+    }else{
+      return month
     }
   };
-  console.log(
-    convert2digit(),
-    "aplha",
-    `${convert2digit() == "00" ? `` : `${convert2digit()}`}`
-  );
+  // console.log(
+  //   convert2digit(),
+  //   "aplha",
+  //   `${convert2digit() == "00" ? `` : `${convert2digit()}`}`
+  // );
 
   let a = await fetch(
     `http://localhost:1337/api/firs?filters[date][$contains]=${convert2digit()}`,
