@@ -7,7 +7,8 @@ export default function Home({ firs }) {
   const [firsData, setFirsData] = useState(firs);
 
   const [selectedValue, setSelectedValue] = useState(
-    "mapbox://styles/mapbox/light-v11"
+    // "mapbox://styles/mapbox/light-v11"
+    "mapbox://styles/mapbox/streets-v12"
   );
   const [countObject, setcountObject] = useState({});
 
@@ -51,7 +52,7 @@ export default function Home({ firs }) {
         .setHTML(
           `<h1 class="text-red-500 font-semibold">${item?.attributes.complaintDetails.type.toUpperCase()}</h1>\n
           
-          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${`http://localhost:3000/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
+          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${process.env.NEXT_PUBLIC_FHOST+`/crimeinfo/${item?.attributes.firno}`}}>More info...</a></Link></p>`
         )
         // <p>I am second line</p>
 
@@ -85,9 +86,9 @@ export default function Home({ firs }) {
           rel="stylesheet"
         />
       </Head>
-     <h1 className="text-center font-semibold text-3xl">Crimes in Current Month</h1>
+     <h1 className="text-center font-semibold text-3xl md:absolute z-40 top-20 left-[36rem] bg-white px-5 py-3 border-black border rounded-lg shadow-lg">Crimes in Current Month</h1>
       <div className="absolute z-40 top-52 rounded-lg mx-10 left-0  shadow-lg border-2 border-black flex items-center justify-center">
-        <div className="bg-white p-4 rounded-lg">
+        <div className="bg-white p-4 rounded-lg hidden md:block">
           <h1 className=" font-extrabold text-center">Top Crimes</h1>
           <table className="w-full">
             <thead>
@@ -143,7 +144,7 @@ export async function getServerSideProps(context) {
   // );
 
   let a = await fetch(
-    `http://localhost:1337/api/firs?filters[date][$contains]=${convert2digit()}`,
+    `${process.env.NEXT_PUBLIC_BHOST}/api/firs?filters[date][$contains]=${convert2digit()}`,
     {
       // headers: headers,
       method: "GET",

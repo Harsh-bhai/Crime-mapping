@@ -364,7 +364,7 @@ const Addfir = () => {
                     for="color"
                     className="leading-7 text-sm text-gray-600"
                   >
-                    Crime Color Code
+                    Color Code
                   </label>
                   <input
                     onChange={handlechange}

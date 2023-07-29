@@ -7,7 +7,7 @@ import { AiFillCloseCircle ,AiFillDownCircle} from 'react-icons/ai';
 
 const Map = ({ firs }) => {
   const [firsData, setFirsData] = useState(firs);
-  const [selectedValue, setSelectedValue] = useState("mapbox://styles/mapbox/light-v11")
+  const [selectedValue, setSelectedValue] = useState("mapbox://styles/mapbox/streets-v12")
   const [options, setOptions] = useState(true)
 
 
@@ -76,7 +76,7 @@ const Map = ({ firs }) => {
             item?.attributes.complaintDetails.type.toUpperCase()
           }</h1>\n
           
-          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${`http://localhost:3000/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
+          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${process.env.NEXT_PUBLIC_FHOST+`/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
         )
         // <p>I am second line</p>
 
@@ -180,7 +180,7 @@ export async function getServerSideProps(context) {
   // );
 
   let a = await fetch(
-    `http://localhost:1337/api/firs?filters[date][$contains]=${convert2digit()}`,
+    `${process.env.NEXT_PUBLIC_BHOST}/api/firs?filters[date][$contains]=${convert2digit()}`,
     {
       // headers: headers,
       method: "GET",
