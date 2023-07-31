@@ -173,7 +173,48 @@ const Addfir = () => {
               Complaint Details
             </h1>
           </div>
+          
           <div className="lg:w-1/2 md:w-2/3 mx-auto ">
+          <div className="flex flex-wrap -m-2 mb-6">
+              <div className="p-2 w-1/2">
+                <div className="relative">
+                  <label
+                    for="criminalname"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Crime type
+                  </label>
+                  <input
+                    onChange={handlechange}
+                    placeholder="Murder"
+                    value={form.type}
+                    type="text"
+                    id="criminalname"
+                    name="criminalname"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-500 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-1/2 ">
+                <div className="relative">
+                  <label
+                    for="color"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Color Code
+                  </label>
+                  <input
+                    onChange={handlechange}
+                    placeholder="#232a36"
+                    value={form.color}
+                    type="text"
+                    id="color"
+                    name="color"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-500 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+            </div>
             <h2 className="font-bold">Criminal Details</h2>
             <div className="flex flex-wrap -m-2 mb-6">
               <div className="p-2 w-1/3">
@@ -306,7 +347,7 @@ const Addfir = () => {
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/4">
+              <div className="p-2 w-1/3">
                 <div className="relative">
                   <label for="long" className="leading-7 text-sm text-gray-600">
                     Longitude
@@ -322,7 +363,7 @@ const Addfir = () => {
                   />
                 </div>
               </div>
-              <div className="p-2 w-1/4">
+              <div className="p-2 w-1/3">
                 <div className="relative">
                   <label for="lat" className="leading-7 text-sm text-gray-600">
                     Latitude
@@ -339,7 +380,7 @@ const Addfir = () => {
                 </div>
               </div>
 
-              <div className="p-2 w-1/4 ">
+              <div className="p-2 w-1/3 ">
                 <div className="relative">
                   <label
                     for="pincode"
@@ -358,25 +399,7 @@ const Addfir = () => {
                   />
                 </div>
               </div>
-              <div className="p-2 w-1/4 ">
-                <div className="relative">
-                  <label
-                    for="color"
-                    className="leading-7 text-sm text-gray-600"
-                  >
-                    Color Code
-                  </label>
-                  <input
-                    onChange={handlechange}
-                    placeholder="#232a36"
-                    value={form.color}
-                    type="text"
-                    id="color"
-                    name="color"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-orange-500 focus:bg-white focus:ring-2 focus:ring-orange-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-              </div>
+              
               
               <div className="p-2 w-full">
                 <div className="relative">
