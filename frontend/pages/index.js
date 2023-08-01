@@ -52,7 +52,7 @@ export default function Home({ firs }) {
         .setHTML(
           `<h1 class="text-red-500 font-semibold">${item?.attributes.complaintDetails.type.toUpperCase()}</h1>\n
           
-          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${process.env.NEXT_PUBLIC_FHOST+`/crimeinfo/${item?.attributes.firno}`}}>More info...</a></Link></p>`
+          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${process.env.NEXT_PUBLIC_FHOST+`/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
         )
         // <p>I am second line</p>
 
