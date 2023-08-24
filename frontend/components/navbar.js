@@ -34,7 +34,7 @@ const Navbar = () => {
             <Link  href={"/addfir"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Add FIR</div></Link>
             {/* <Link  href={"/services"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Services</div></Link> */}
             <Link  href={"/map/0"}><div onClick={toggle} className= 'hover:text-red-600 text-black cursor-pointer'>Check Crimes</div></Link>
-            {/* <Link  href={"/track"}><div onClick={toggle} className=' hover:text-red-600 text-black cursor-pointer'>Track Vehicles</div></Link> */}
+            <Link  href={"/track"}><div onClick={toggle} className=' hover:text-red-600 text-black cursor-pointer'>Track Vehicles</div></Link>
             <Link  href={"/crimecolorcodes"}><div onClick={toggle} className='hover:text-red-600 text-black cursor-pointer'>Crime Color Codes</div></Link>
           </div>
           </div>

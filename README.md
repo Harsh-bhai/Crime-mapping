@@ -12,10 +12,8 @@ Created a website for Police to track crime record visually on Map, based on the
 * PostgreSQL
 
 ## Images:
-![Index](./frontend/public/map.jpg)
-![Index](./frontend/public/form.jpg)
-
-
-<!-- [Link to the Project](https://vmartfrontend.onrender.com/ "V-Mart") -->    
+![Index](./frontend/public/home.jpg)
+![Index](./frontend/public/newmap.jpg)
+![Index](./frontend/public/newform.jpg)
 
 

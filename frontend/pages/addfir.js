@@ -29,49 +29,61 @@ const Addfir = () => {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      data: {
-        firno: form.firno,
-        date: form.date,
-        time: form.time,
-        complaintDetails: {
-          type: form.type,
-          victim: {
-            name: form.victimname,
-            age: form.victimage,
-            gender: form.victimgender,
-          },
-          criminal: {
-            name: form.criminalname,
-            age: form.criminalage,
-            gender: form.criminalgender,
-          },
+try {
+  const data = {
+    data: {
+      firno: form.firno,
+      date: form.date,
+      time: form.time,
+      complaintDetails: {
+        type: form.type,
+        victim: {
+          name: form.victimname,
+          age: form.victimage,
+          gender: form.victimgender,
         },
-        location: {
-          loglat: [form.long, form.lat],
-          address: form.address,
-          color:form.color,
-          pincode: form.pincode,
+        criminal: {
+          name: form.criminalname,
+          age: form.criminalage,
+          gender: form.criminalgender,
         },
       },
-    };
-    console.log(data);
-    let a = await fetch(`${process.env.NEXT_PUBLIC_BHOST}/api/firs`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+      location: {
+        loglat: [form.long, form.lat],
+        address: form.address,
+        color:form.color,
+        pincode: form.pincode,
       },
-      body: JSON.stringify(data),
-    });
-    toast.success("FIR added Successfully", {
-      position: "top-right",
-      autoClose: 1200,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "light",
-    });
+    },
+  };
+  console.log(data);
+  let a = await fetch(`${process.env.NEXT_PUBLIC_BHOST}/api/firs`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  toast.success("FIR added Successfully", {
+    position: "top-right",
+    autoClose: 1200,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  });
+} catch (error) {
+  toast.error(error, {
+    position: "top-right",
+    autoClose: 1200,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  });
+}
     setForm({
       firno: "",
       date: "",
