@@ -11,6 +11,7 @@ export default function Home({ firs }) {
     "mapbox://styles/mapbox/streets-v12"
   );
   const [countObject, setcountObject] = useState({});
+  console.log(firs)
 
   function countComplaintTypes(array) {
     const countObject = {};
@@ -41,7 +42,7 @@ export default function Home({ firs }) {
       container: "map",
       style: selectedValue,
       center: [81.298854, 21.189892],
-      zoom: 10,
+      zoom: 9,
     });
 
     firs?.data.map((item) => {
@@ -135,6 +136,8 @@ export async function getServerSideProps(context) {
       return "";
     } else if (parseInt(month) < 10) {
       return `-0${month}-`;
+    }else  {
+      return `-${month}-`;
     }
   };
   // console.log(
