@@ -15,7 +15,7 @@ const Slug = ({ firs }) => {
                 Crime Details:
               </h3>
               <h3 className="text-lg mb-4 leading-6 font-medium text-gray-900">
-                Fir.no : {slug}
+                FIR No. : {slug}
               </h3>
               <p className="mt-1 font-semibold max-w-2xl text-sm text-gray-900">Crime Type: <span className="capitalize">{firs.attributes.complaintDetails.type}</span> </p>
             </div>
