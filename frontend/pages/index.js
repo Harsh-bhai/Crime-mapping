@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import mapboxgl from "mapbox-gl";
+import { useRouter } from "next/router";
 
 export default function Home({ firs }) {
+  const router = useRouter();
   const [reloadkey, setReloadkey] = useState(1);
   const [firsData, setFirsData] = useState(firs);
 
@@ -11,7 +13,6 @@ export default function Home({ firs }) {
     "mapbox://styles/mapbox/streets-v12"
   );
   const [countObject, setcountObject] = useState({});
-  console.log(firs)
 
   function countComplaintTypes(array) {
     const countObject = {};
@@ -27,15 +28,16 @@ export default function Home({ firs }) {
     });
 
     return countObject;
-  }
+  }  
 
   useEffect(() => {
+    if(!localStorage.getItem("token")){
+      router.push("/login")
+    }
     setFirsData(firs);
   }, [firs]);
 
   useEffect(() => {
-    // console.log("i am running");
-    // console.log(firs, "firs pehle wale");
 
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
     const map = new mapboxgl.Map({

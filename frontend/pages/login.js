@@ -30,7 +30,6 @@ const Login = ({reloadNav}) => {
       identifier: email,
       password,
     };
-    console.log(data);
     let a = await fetch(`${process.env.NEXT_PUBLIC_BHOST}/api/auth/local`, {
       method: "POST",
       headers: {
@@ -39,7 +38,6 @@ const Login = ({reloadNav}) => {
       body: JSON.stringify(data),
     });
     let response = await a.json();
-    console.log(response)
     if(response.jwt){
         toast.success('Logged In Sucessfully', {
             position: "bottom-right",
