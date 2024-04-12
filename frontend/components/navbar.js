@@ -3,8 +3,10 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Link from 'next/link';
 import { toast } from "react-toastify";
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
@@ -25,6 +27,7 @@ const Navbar = () => {
       theme: "light",
       // transition: Bounce,
       });
+      router.push("/login");
   };
 
   const ref = useRef();
