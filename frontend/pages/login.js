@@ -73,7 +73,20 @@ const Login = ({reloadNav}) => {
   };
   return (
     <div className="min-h-screen flex justify-center items-center">
+      
       <div className=" relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl shadow-orange-200 ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10">
+      <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+  <h1 className="sm:text-3xl text-2xl  title-font mb-2 font-bold text-green-500">
+    Demo
+  </h1>
+  <p className=" leading-relaxed text-gray-500">
+    use email - batman@gmail.com 
+  </p>
+  <p className=" leading-relaxed text-gray-500">
+  and password - batman
+  </p>
+</div>
+
         <div className="w-full">
           <div className="text-center">
             <h1 className="text-3xl font-semibold text-gray-900">Login</h1>
