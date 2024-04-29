@@ -12,7 +12,8 @@ Created a website for Police to track crime record visually on Map, based on the
 * PostgreSQL
 
 ## Demo Video :
-[Link to My Video](./frontend/public/crime%20mapper.mp4)
+https://github.com/Harsh-bhai/crime-mapping/assets/107921110/3a59b011-995c-448a-9add-d8167ed9fc3f
+
 
 
 ## Images:
