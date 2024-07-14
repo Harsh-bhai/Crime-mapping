@@ -6,6 +6,13 @@ import { useRouter } from "next/router";
 import { AiFillCloseCircle ,AiFillDownCircle} from 'react-icons/ai';
 
 const Map = ({ firs }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      router.push("/login");
+    }
+  }, []);
   const [firsData, setFirsData] = useState(firs);
   const [selectedValue, setSelectedValue] = useState("mapbox://styles/mapbox/streets-v12")
   const [options, setOptions] = useState(true)
@@ -28,7 +35,6 @@ const Map = ({ firs }) => {
 
   // console.log(firs, "firs naye wale");
 
-  const router = useRouter();
   const [reloadkey, setReloadkey] = useState(1);
 
  
@@ -64,22 +70,27 @@ const Map = ({ firs }) => {
       center: [81.298854, 21.189892],
       zoom: 10,
     });
-    // {console.log(firs,"here")}
 
     firs?.data.map((item) => {
-      // console.log(item, "acha");
-      const popup = new mapboxgl.Popup()
+      const popup = new mapboxgl.Popup({
+        closeButton: false, // Hide the close button
+        closeOnClick: true, 
+        anchor: "bottom",
+      })
         .setLngLat([-96, 37.8])
-        // .setText("bro")
         .setHTML(
-          `<h1 class="text-red-500 font-semibold">${
-            item?.attributes.complaintDetails.type.toUpperCase()
-          }</h1>\n
+          `
+          <a target="_blank" href="${process.env.NEXT_PUBLIC_FHOST}/crimeinfo/${item?.attributes.firno
+          }" class="font-semibold">
+          <div class="p-4 rounded-lg relative">
+          <div class="absolute inset-0 bg-opacity-30 bg-[${item.attributes.location.color}] rounded-lg">
+          </div>
+          <h1 class="text-black font-semibold text-lg mb-2">${item?.attributes.complaintDetails.type.toUpperCase()}</h1>
           
-          \n<p class="text-blue-600 cursor-pointer"><Link><a target={"_blank"} href=${process.env.NEXT_PUBLIC_FHOST+`/crimeinfo/${item?.attributes.firno}`}>More info...</a></Link></p>`
+          </div>
+          </a>
+        `
         )
-        // <p>I am second line</p>
-
         .addTo(map);
 
       // Set marker options.
@@ -192,6 +203,5 @@ export async function getServerSideProps(context) {
     props: { firs }, // will be passed to the page component as props
   };
 }
-
 
 

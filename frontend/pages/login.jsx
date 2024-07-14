@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Login = ({reloadNav}) => {
+const Login = ({ reloadNav }) => {
   const router = useRouter();
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -38,54 +38,49 @@ const Login = ({reloadNav}) => {
       body: JSON.stringify(data),
     });
     let response = await a.json();
-    if(response.jwt){
-        toast.success('Logged In Sucessfully', {
-            position: "bottom-right",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            // transition: Bounce,
-            });
-        localStorage.setItem("token", response.jwt);
-    reloadNav(Math.random())
-    router.push("/");
+    if (response.jwt) {
+      toast.success("Logged In Sucessfully", {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        // transition: Bounce,
+      });
+      localStorage.setItem("token", response.jwt);
+      reloadNav(Math.random());
+      router.push("/");
+    } else {
+      toast.error(response.error.message, {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        // transition: Bounce,
+      });
     }
-    else{
-        toast.error(response.error.message, {
-            position: "bottom-right",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            // transition: Bounce,
-            });
-    }
-
-
-    
   };
   return (
     <div className="min-h-screen flex justify-center items-center">
-      
       <div className=" relative mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl shadow-orange-200 ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10">
-      <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-  <h1 className="sm:text-3xl text-2xl  title-font mb-2 font-bold text-green-500">
-    Demo
-  </h1>
-  <p className=" leading-relaxed text-gray-500">
-    use email - batman@gmail.com 
-  </p>
-  <p className=" leading-relaxed text-gray-500">
-  and password - batman
-  </p>
-</div>
+        <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+          <h1 className="sm:text-3xl text-2xl  title-font mb-2 font-bold text-green-500">
+            Demo
+          </h1>
+          <p className=" leading-relaxed text-gray-500">
+            use email - batman@gmail.com
+          </p>
+          <p className=" leading-relaxed text-gray-500">
+            and password - batman
+          </p>
+        </div>
 
         <div className="w-full">
           <div className="text-center">

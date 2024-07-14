@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+import Navbar from '@/components/navbar.jsx'
+import Footer from '@/components/footer.jsx'
 import { useState, useEffect } from 'react'
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
