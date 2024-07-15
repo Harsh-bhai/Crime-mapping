@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Colorimporter from "./colorimporter";
 
 export default function MainMap({ firs }) {
   const router = useRouter();
@@ -92,6 +93,7 @@ export default function MainMap({ firs }) {
       <h1 className="text-center font-semibold text-3xl md:absolute z-40 top-20 left-[36rem] bg-white px-5 py-3 border-black border rounded-lg shadow-lg">
         Crimes in {currentMonth} Month
       </h1>
+      <Colorimporter/>
       <div className="absolute z-40 top-52 rounded-lg mx-10 left-0  shadow-lg border-2 border-black flex items-center justify-center">
         <div className="bg-white p-4 rounded-lg hidden md:block">
           <h1 className="font-extrabold text-center">Top Crimes</h1>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import Colorimporter from "@/components/colorimporter";
 const Crimecolorcodes = () => {
   const router = useRouter();
 
@@ -24,6 +25,7 @@ const Crimecolorcodes = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center  sm:px-6 lg:px-8">
+      <Colorimporter />     
       <h1 className="md:text-4xl text-3xl font-semibold mx-4 my-8">Crime Color Codes</h1>
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 drop-shadow-2xl ">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
